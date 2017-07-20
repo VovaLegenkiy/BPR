@@ -1,0 +1,196 @@
+$primary-color: black
+$second-color: grey
+$bgImg: url('../img/bg_image.jpg')
+$bgImg-inverse: url('../img/bg_image.jpg')
+$text-color: gray
+$line-color: gray
+$social-text-color: white
+$social-border-color: white
+$base-font-family: 'Comfortaa', cursive
+$second-font-family: 'Pompiere', cursive
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+fieldset, input, textarea, p, blockquote, th, td, img
+  padding: 0
+  margin: 0
+
+
+.fp-tableCell
+  display: block
+
+#wrapper
+  font-family: $base-font-family
+
+/*Social*/
+#social
+  width: 60px
+  height: 100%
+  background-color: $primary-color
+  position: fixed
+  z-index: 100
+
+  a
+    color: $social-text-color
+
+  #icon-block
+    position: absolute
+    top: 50%
+    margin-top: -95px
+
+    .icon
+      width: 35px
+      height: 35px
+      margin-left: 10px
+      margin-top: 10px
+      -webkit-border-radius: 17.5px
+      -moz-border-radius: 17.5px
+      border-radius: 17.5px
+      font-size: 20px
+      box-sizing: border-box
+      border: 1px solid $social-border-color
+      cursor: pointer
+      float: none
+
+      &:hover
+        $transition: border-color 0.3s ease-in
+        border-color: $second-color
+        -webkit-transition: $transition
+        -moz-transition: $transition
+        -o-transition: $transition
+        transition: $transition
+        i
+          $transition: color 0.3s ease-in
+          color: $second-color
+          -webkit-transition: $transition
+          -moz-transition: $transition
+          -o-transition: $transition
+          transition: $transition
+
+      &.tel
+        padding-top: 4px
+        padding-left: 8px
+
+      &.tg
+        padding-top: 3px
+        padding-left: 7px
+
+      &.fb
+        padding-top: 4px
+        padding-left: 10px
+
+      &.inst
+        padding-top: 3px
+        padding-left: 7px
+
+/*Social end*/
+
+$arrow-right: url("../img/right.png")
+
+.section-container
+  width: 100%
+  height: 100%
+
+
+.slide
+  #screen1, #screen3
+    background: $bgImg no-repeat center
+    background-size: cover
+
+  #screen2, #screen4
+    background: $bgImg-inverse no-repeat center
+    background-size: cover
+
+  #screen2, #screen3
+    .vertical
+      .container
+        padding-top: 20em
+      .row-flex
+        display: flex
+        flex-flow: row wrap
+      div
+        h1
+          color: $text-color
+          text-align: center
+        .imgLayer
+          margin: 5px
+          border: 1px solid $primary-color
+          border-radius: 50%
+          padding: 20%
+          img
+            height: 100%
+            width: 100%
+        .imgContent
+          margin-top: 50%
+          font-size: 14px
+          color: $primary-color
+          border: 1px solid $primary-color
+          border-radius: 10px
+          text-align: left
+
+          hr
+            margin-top: 7px
+            margin-bottom: 7px
+            border: 1px solid $line-color
+            &:nth-child(1), &:nth-child(3)
+              width: 20%
+            &:nth-child(2)
+              width: 40%
+          h1
+            font-size: 150%
+            margin-top: 10px
+
+  #screen4
+    .vertical
+      .container
+        padding-top: 10em
+  #screen1
+    .vertical
+      .container
+        padding-top: 10em
+        font-family: 'Pompiere', cursive
+
+.info
+  text-align: center
+  color: $text-color
+  height: 60%
+  width: 50%
+  margin: 0 auto
+  h1
+    border-bottom: 1px solid black
+    font-family: $second-font-family
+    font-size: 60px
+/*button*/
+
+.buttons
+  font-family: $second-font-family
+  a
+    border: 1px solid black
+    border-radius: 50%
+    color: $second-color
+    font-size: 100px
+    text-decoration: none
+    padding: 15px
+
+    &:hover
+      border: 1px solid black
+      border-radius: 50%
+      text-decoration: none
+      color: $second-color
+      padding: 15px
+      .a
+        display: none
+        opacity: 0
+      .b
+        display: inline
+
+    .b
+      display: none
+
+/*end button*/
+
+/*Form*/
+@import "form"
+
+/*Media*/
+
+@import "media"

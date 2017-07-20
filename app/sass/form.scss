@@ -1,0 +1,269 @@
+$primary-color: gray;
+$second-color: black;
+$form-color: lightgrey;
+$error-color: #E66161;
+$btn-color: black;
+$base-font-family: 'Comfortaa', cursive;
+
+$bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+$time: 300ms;
+
+form {
+  font-family: $base-font-family;
+}
+
+@mixin animated(
+  $time: 300ms,
+  $fillmode: both,
+  $count: 1) {
+  animation-duration: $time;
+  animation-fill-mode: $fillmode;
+  animation-iteration-count: $count;
+}
+
+/*feedback*/
+#feedback input {
+  width: 100%;
+}
+
+#feedback button {
+  width: 100%
+}
+
+#feedback select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &::after {
+    content: '\2190'
+  }
+}
+
+#feedback {
+  width: 50%;
+}
+
+
+.vertical #feedback {
+  display: inline-block;
+  vertical-align: middle
+}
+
+/*feedback end*/
+.form-footer {
+  margin-top: 1em;
+}
+
+.ui-input {
+  position: relative;
+  padding: 0;
+  border: 0;
+}
+
+.ui-input input {
+  color: $primary-color;
+  border: 0;
+  background: none;
+  padding: 16px 0 16px 0;
+  font-size: 24px;
+  outline: 0;
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  touch-callout: none;
+}
+
+select {
+  @extend input;
+}
+
+.ui-input input + label {
+  position: relative;
+  display: block;
+  padding: 8px 0 8px 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  text-align: left;
+
+  &::before, &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+  }
+
+  &::before {
+    background-color: $primary-color;
+  }
+
+  &::after {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $time $bezier;
+    background-color: $second-color;
+    height: 2px;
+  }
+
+  span {
+    position: relative;
+    color: $primary-color;
+    transition: color $time $bezier;
+
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      transform: scaleX(1);
+      white-space: nowrap;
+      color: $second-color;
+
+      background-image: linear-gradient(to right,
+              $second-color 50%,
+              rgba(255, 255, 255, 0) 0%);
+      background-position: 100% 50%;
+      background-size: 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      backface-visibility: hidden;
+      perspective: 1000px;
+      transform: translateZ(0);
+
+      transition: background-position $time $bezier;
+    }
+  }
+}
+
+.ui-input input:focus,
+.ui-input input.error,
+.ui-input input:invalid,
+.ui-input input.filled {
+
+  & + label {
+
+    &::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    span::after {
+      //color: #4A90E2;
+      background-image: linear-gradient(to right,
+              $second-color 50%,
+              rgba(255, 255, 255, 0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.ui-input input.filled {
+  color: $second-color;
+
+  & + label {
+
+    &::after {
+      background-color: $second-color;
+    }
+
+    span::after {
+      background-image: linear-gradient(to right,
+              $second-color 50%,
+              rgba(255, 255, 255, 0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.ui-input input:focus {
+  color: $second-color;
+
+  & + label {
+
+    &::after {
+      background-color: $second-color;
+    }
+
+    span::after {
+      background-image: linear-gradient(to right,
+              $second-color 50%,
+              rgba(255, 255, 255, 0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.ui-input input.error,
+.ui-input input:invalid {
+  color: $error-color;
+
+  & + label {
+
+    &::after {
+      background-color: $error-color;
+    }
+
+    span::after {
+      background-image: linear-gradient(to right,
+              $error-color 50%,
+              rgba(255, 255, 255, 0) 0%);
+      background-position: 0% 50%;
+    }
+  }
+}
+
+.btn {
+  border: 0;
+  background-color: $btn-color;
+  padding: 18px 30px 18px 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .0875em;
+  font-weight: 500;
+  border-radius: 100px;
+  outline: 0;
+  color: white;
+  transition: background-color $time $bezier,
+  color $time $bezier;
+}
+
+.btn:focus, .btn:active,
+.btn:hover {
+  background-color: $form-color;
+  color: $second-color;
+}
+
+.__first, .__second, .__third, .__fourth {
+  animation-name: fadeIn;
+  animation-duration: 180ms;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+.__first {
+  animation-delay: 0ms;
+}
+
+.__second {
+  animation-delay: 80ms;
+}
+
+.__third {
+  animation-delay: 180ms;
+}
+
+.__fourth {
+  animation-delay: 360ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}

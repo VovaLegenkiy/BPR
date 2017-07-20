@@ -1,0 +1,85 @@
+@media screen and (min-width: 501px) and (max-width: 992px) {
+  .info h1 {
+    font-size: 60px; }
+  .section #screen2 .container .vertical, .section #screen3 .container .vertical {
+    padding-top: 20em; }
+    .section #screen2 .container .vertical .row h1, .section #screen3 .container .vertical .row h1 {
+      font-size: 15px; }
+  .section .buttons a {
+    font-size: 50px; } }
+
+@media screen and (orientation: landscape) and (max-device-width: 900px) {
+  #fullpage {
+    display: none; }
+  .section #screen2 .container .vertical, .section #screen3 .container .vertical {
+    padding-top: 15em; }
+    .section #screen2 .container .vertical .row h1, .section #screen3 .container .vertical .row h1 {
+      font-size: 15px; }
+  .section .ui-input input, .section .ui-input select {
+    padding: 0px 0 5px 0px;
+    font-size: 14px; }
+  #social {
+    width: 60px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: fixed;
+    z-index: 100; }
+  .vertical {
+    height: 60px; } }
+
+@media screen and (max-width: 500px) {
+  .buttons a {
+    font-size: 300%;
+    padding: 10px; }
+  .fp-controlArrow.fp-next {
+    height: 50px;
+    width: 30px; }
+    .fp-controlArrow.fp-next:hover {
+      height: 50px;
+      width: 30px; }
+  .fp-controlArrow.fp-prev {
+    height: 50px;
+    width: 30px; }
+    .fp-controlArrow.fp-prev:hover {
+      height: 50px;
+      width: 30px; }
+  #social {
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    z-index: 100; }
+    #social #icon-block {
+      top: 0;
+      left: 50%;
+      margin-top: 0;
+      margin-left: -95px; }
+  .section {
+    margin-left: 0; }
+  #social a {
+    float: left; }
+  .info {
+    margin-top: 100px; }
+    .info h1 {
+      font-size: 40px; }
+  .slide #screen2 .vertical .container, .slide #screen3 .vertical .container {
+    padding-top: 15em; }
+  .slide #screen2 .vertical div .imgLayer, .slide #screen3 .vertical div .imgLayer {
+    margin: -10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 8px; }
+  .slide #screen2 .vertical div .imgContent, .slide #screen3 .vertical div .imgContent {
+    margin: 20px -10px; }
+    .slide #screen2 .vertical div .imgContent h1, .slide #screen3 .vertical div .imgContent h1 {
+      font-size: 5px; }
+  .slide #screen3 .imgContent {
+    height: 50px; }
+  .slide #screen4 .vertical .container {
+    padding-top: 5em; }
+  .slide #screen1 .vertical .container {
+    padding-top: 5em; }
+  .nav-social {
+    margin: 0 auto; } }
